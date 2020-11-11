@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  
+  dockerflutter:
+    image: dockerflutter
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      # Update this to wherever you want VS Code to mount the folder of your project
+      - workspace:/home/developer:delegated
