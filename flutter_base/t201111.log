@@ -1,0 +1,178 @@
+[2 ms] Remote-Containers 0.148.1 in VS Code 1.51.0 (fcac248b077b55bae4ba5bab613fd6e9156c2f0c).
+[25 ms] Start: Resolving remote
+[27 ms] Setting up container for folder or workspace: /Users/huangzheng/frontend/docker_flutter/flutter_base
+
+[38 ms] Start: Check Docker is running
+[38 ms] Start: Run: docker info
+[556 ms] Start: Run: git rev-parse --show-cdup
+[568 ms] Start: Run: docker ps -q -a --filter label=vsch.local.folder=/Users/huangzheng/frontend/docker_flutter/flutter_base --filter label=vsch.quality=stable
+[701 ms] Start: Run: docker build -f /Users/huangzheng/frontend/docker_flutter/flutter_base/.devcontainer/Dockerfile -t vsc-flutter_base-aef3d76434a9d2790a34e2497f652f04 /Users/huangzheng/frontend/docker_flutter/flutter_base/.devcontainer
+[+] Building 0.1s (5/5) FINISHED                                                
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 70B                                        0.0s
+ => [internal] load metadata for docker.io/cirrusci/flutter:stable         0.0s
+ => CACHED [1/1] FROM docker.io/cirrusci/flutter:stable                    0.0s
+ => exporting to image                                                     0.0s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:2b9bab59d3223b77a9bbc454eda25735a166e21ac6fb7  0.0s
+ => => naming to docker.io/library/vsc-flutter_base-aef3d76434a9d2790a34e  0.0s
+[933 ms] Start: Run: docker events --format {{json .}} --filter status=start
+[936 ms] Start: Starting container
+[936 ms] Start: Run: docker run -a STDOUT -a STDERR --mount type=bind,source=/Users/huangzheng/frontend/docker_flutter,target=/workspaces/docker_flutter,consistency=delegated -l vsch.quality=stable -l vsch.remote.devPort=0 -l vsch.local.folder=/Users/huangzheng/frontend/docker_flutter/flutter_base --privileged --entrypoint /bin/sh vsc-flutter_base-aef3d76434a9d2790a34e2497f652f04 -c echo Container started ; trap "exit 0" 15; while sleep 1 & wait $!; do :; done
+Container started
+[1550 ms] Start: Run: docker ps -q -a --filter label=vsch.local.folder=/Users/huangzheng/frontend/docker_flutter/flutter_base --filter label=vsch.quality=stable
+[1716 ms] Start: Run: docker inspect --type container b4df40821be0
+[1865 ms] Start: Inspecting container
+[1865 ms] Start: Run: docker inspect --type container b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e
+[2055 ms] Start: Run: docker exec -i -u root -e VSCODE_REMOTE_CONTAINERS_SESSION=c11b92b1-32b8-40a3-aac7-75185c8f7d5d1605138460265 b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e /bin/sh
+[2057 ms] Start: Run in container: uname -m
+[2372 ms] x86_64
+[2372 ms] 
+[2372 ms] Start: Run in container: (cat /etc/os-release || cat /usr/lib/os-release) 2>/dev/null
+[2377 ms] NAME="Ubuntu"
+VERSION="20.04.1 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.1 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+[2377 ms] 
+[2378 ms] Start: Run in container: cat /etc/passwd
+[2383 ms] Start: Updating configuration state
+[2385 ms] Start: Setup shutdown monitor
+[2388 ms] Forking shutdown monitor: /Users/huangzheng/.vscode/extensions/ms-vscode-remote.remote-containers-0.148.1/dist/shutdownMonitorProcess /var/folders/nk/35q8c8_n5nx4x4jmxm01_jyc0000gn/T/vscode-remote-containers-3f71b5f63359b8783047aa7008f0710a02e8dd1e.sock singleContainer Info /Users/huangzheng/Library/Application Support/Code/logs/20201107T023618/exthost48/ms-vscode-remote.remote-containers 1605138460973
+[2391 ms] Start: Run in container: test -d /root/.vscode-server
+[2395 ms] 
+[2395 ms] 
+[2395 ms] Exit code 1
+[2396 ms] Start: Run in container: test -d /root/.vscode-remote
+[2398 ms] 
+[2398 ms] 
+[2398 ms] Exit code 1
+[2398 ms] Start: Run in container: set -o noclobber ; mkdir -p '/root/.vscode-server/data/Machine' && { > '/root/.vscode-server/data/Machine/.writeMachineSettingsMarker' ; } 2> /dev/null
+[2405 ms] 
+[2405 ms] 
+[2405 ms] Start: Run in container: mkdir -p '/root/.vscode-server/data/Machine' && cat >'/root/.vscode-server/data/Machine/settings.json' <<'settingsJSON'
+[2413 ms] 
+[2413 ms] 
+[2413 ms] Start: Run in container: test -d /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c
+[2416 ms] 
+[2416 ms] 
+[2416 ms] Exit code 1
+[2416 ms] Installing VS Code Server for commit fcac248b077b55bae4ba5bab613fd6e9156c2f0c
+[2416 ms] Start: Run in container: mkdir -p /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c_1605138463389
+[2421 ms] 
+[2421 ms] 
+[2449 ms] Start: Run in container: (dd iflag=fullblock bs=8192 count=3687 2>/dev/null; dd iflag=fullblock bs=5516 count=1 2>/dev/null) | tar --no-same-owner -xz --strip-components 1 -C /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c_1605138463389
+[3975 ms] 
+[3975 ms] 
+[3975 ms] Start: Run in container: mv -n /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c_1605138463389 /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c
+[3982 ms] 
+[3982 ms] 
+[3982 ms] Start: Launching Remote-Containers helper.
+[3982 ms] Start: Run: gpgconf --list-dir agent-extra-socket
+[3987 ms] Start: Run in container: cat <<'EOF-/tmp/vscode-remote-containers-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js' >/tmp/vscode-remote-containers-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js
+[3990 ms] 
+[3990 ms] 
+[3990 ms] Start: Run in container: # Test for /root/.ssh/known_hosts and ssh
+[3995 ms] 
+[3995 ms] 
+[3996 ms] Start: Run in container: cat <<'EOF-/tmp/vscode-remote-containers-server-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js' >/tmp/vscode-remote-containers-server-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js
+[4016 ms] 
+[4016 ms] 
+[4016 ms] Start: Run in container: # Copy /Users/huangzheng/.ssh/known_hosts to /root/.ssh/known_hosts
+[4016 ms] Start: Run: docker exec -i -u root -e REMOTE_CONTAINERS_SOCKETS=["/tmp/vscode-ssh-auth-42b88819ec578a344c8aa7675ea8b5da5cbafb17.sock"] -e REMOTE_CONTAINERS_IPC=/tmp/vscode-remote-containers-ipc-42b88819ec578a344c8aa7675ea8b5da5cbafb17.sock b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node /tmp/vscode-remote-containers-server-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js
+[4021 ms] 
+[4021 ms] 
+[4021 ms] Start: Run in container: command -v git >/dev/null 2>&1 && git config --system credential.helper '!f() { /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node /tmp/vscode-remote-containers-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js $*; }; f' || true
+[4028 ms] 
+[4028 ms] 
+[4028 ms] Start: Run in container: set -o noclobber ; mkdir -p '/root/.vscode-server/data/Machine' && { > '/root/.vscode-server/data/Machine/.installExtensionsMarker' ; } 2> /dev/null
+[4032 ms] 
+[4032 ms] 
+[4034 ms] Start: Run in container: test -d /root/.vscode-server/extensionsCache && ls /root/.vscode-server/extensionsCache || true
+[4037 ms] 
+[4037 ms] 
+[4247 ms] Start: Run in container: # Copy extensions to remote
+[10305 ms] 
+[10306 ms] 
+[10306 ms] Start: Run in container: cd /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c; export VSCODE_AGENT_FOLDER=/root/.vscode-server; /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/server.sh --extensions-download-dir /root/.vscode-server/extensionsCache --install-extension dart-code.flutter --install-extension felixangelov.bloc --install-extension localizely.flutter-intl --install-extension bendixma.dart-data-class-generator --install-extension everettjf.pubspec-dependency-search --install-extension zxh404.vscode-proto3 --install-extension huang12zheng.protobuf-helper --install-extension gruntfuggly.todo-tree --install-extension shd101wyy.markdown-preview-enhanced --install-extension MS-CEINTL.vscode-language-pack-zh-hans --force
+[37668 ms] Installing extensions...
+Installing extension 'felixangelov.bloc' v5.4.0...
+Installing extension 'localizely.flutter-intl' v1.13.0...
+Installing extension 'huang12zheng.protobuf-helper' v0.2.10...
+Installing extension 'dart-code.flutter' v3.16.0...
+Installing extension 'everettjf.pubspec-dependency-search' v1.1.0...
+Installing extension 'ms-ceintl.vscode-language-pack-zh-hans' v1.51.2...
+Installing extension 'zxh404.vscode-proto3' v0.5.2...
+Installing extension 'shd101wyy.markdown-preview-enhanced' v0.5.13...
+Installing extension 'gruntfuggly.todo-tree' v0.0.188...
+Installing extension 'bendixma.dart-data-class-generator' v0.4.4...
+Extension 'everettjf.pubspec-dependency-search' v1.1.0 was successfully installed.
+Extension 'huang12zheng.protobuf-helper' v0.2.10 was successfully installed.
+Extension 'gruntfuggly.todo-tree' v0.0.188 was successfully installed.
+Extension 'ms-ceintl.vscode-language-pack-zh-hans' v1.51.2 was successfully installed.
+Extension 'bendixma.dart-data-class-generator' v0.4.4 was successfully installed.
+Extension 'felixangelov.bloc' v5.4.0 was successfully installed.
+Extension 'zxh404.vscode-proto3' v0.5.2 was successfully installed.
+Extension 'shd101wyy.markdown-preview-enhanced' v0.5.13 was successfully installed.
+Extension 'dart-code.flutter' v3.16.0 was successfully installed.
+Extension 'localizely.flutter-intl' v1.13.0 was successfully installed.
+[37669 ms] 
+[37669 ms] Start: Run in container: ls /root/.vscode-server/extensionsCache || true
+[37673 ms] bendixma.dart-data-class-generator-0.4.4
+dart-code.dart-code-3.16.0
+dart-code.flutter-3.16.0
+everettjf.pubspec-dependency-search-1.1.0
+felixangelov.bloc-5.4.0
+gruntfuggly.todo-tree-0.0.188
+huang12zheng.protobuf-helper-0.2.10
+localizely.flutter-intl-1.13.0
+ms-ceintl.vscode-language-pack-zh-hans-1.51.2
+shd101wyy.markdown-preview-enhanced-0.5.13
+zxh404.vscode-proto3-0.5.2
+[37673 ms] 
+[37686 ms] Start: Run in container: # Test for /root/.gitconfig and git
+[37688 ms] /root/.gitconfig exists
+[37688 ms] 
+[37688 ms] Exit code 1
+[37689 ms] Start: Run in container: command -v git >/dev/null 2>&1 && git config --global credential.helper '!f() { /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node /tmp/vscode-remote-containers-42b88819ec578a344c8aa7675ea8b5da5cbafb17.js $*; }; f' || true
+[37692 ms] 
+[37693 ms] 
+[37693 ms] Start: Run in container: for pid in `cd /proc && ls -d [0-9]*`; do { echo $pid ; readlink -f /proc/$pid/cwd ; xargs -0 < /proc/$pid/environ ; xargs -0 < /proc/$pid/cmdline ; } ; echo ; done 2>/dev/null
+[37731 ms] Start: Run in container: /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/server.sh --disable-user-env-probe --use-host-proxy --port 0 --extensions-download-dir /root/.vscode-server/extensionsCache
+[38119 ms] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[38153 ms] IP Address: 172.17.0.2
+[38159 ms] Extension host agent listening on 40135
+
+[38159 ms] 
+[38160 ms] Start: Run in container: echo 40135 >/root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/.devport
+[38160 ms] [23:48:19] Extension host agent started.
+[38162 ms] 
+[38162 ms] 
+[38164 ms] Forwarding local port 40135 to container port 40135
+[38178 ms] Start: Run: docker exec -i -u root -e VSCODE_REMOTE_CONTAINERS_SESSION=c11b92b1-32b8-40a3-aac7-75185c8f7d5d1605138460265 b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node -e 
+[38182 ms] Start: Run: docker exec -i -u root -e VSCODE_REMOTE_CONTAINERS_SESSION=c11b92b1-32b8-40a3-aac7-75185c8f7d5d1605138460265 b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node -e 
+[38614 ms] [23:48:19] [::ffff:127.0.0.1][cba27b16][ExtensionHostConnection] New connection established.
+[38657 ms] [23:48:19] [::ffff:127.0.0.1][cba27b16][ExtensionHostConnection] <207> Launched Extension Host Process.
+[38663 ms] [23:48:19] [::ffff:127.0.0.1][dc2b7592][ManagementConnection] New connection established.
+[38718 ms] [23:48:19] Listing 0 persistent terminals, 0 total terminals
+[39785 ms] Start: Run: docker exec -i -u root -e VSCODE_REMOTE_CONTAINERS_SESSION=c11b92b1-32b8-40a3-aac7-75185c8f7d5d1605138460265 b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node -e 
+[39927 ms] Start: Run: docker exec -i -u root -e VSCODE_REMOTE_CONTAINERS_SESSION=c11b92b1-32b8-40a3-aac7-75185c8f7d5d1605138460265 b4df40821be0cece89416a859326d3e1500a3282393fe7dc3a2d334ed151de4e /root/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node -e 
+[109135 ms] Start: Run in container: cat /proc/379/environ
