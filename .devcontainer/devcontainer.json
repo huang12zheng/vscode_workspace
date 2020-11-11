@@ -1,0 +1,26 @@
+{
+    "name": "flutter_docker",
+    "context": "..",
+    "dockerFile": "../Dockerfile",
+    "remoteUser": "developer",
+    "settings": {
+        "terminal.integrated.shell.linux": null
+    },
+    "runArgs": ["--privileged"],
+    "extensions": [
+        "dart-code.flutter",
+        "dart-code.flutter",
+        "felixangelov.bloc",
+        "localizely.flutter-intl",
+
+        "bendixma.dart-data-class-generator",
+        "everettjf.pubspec-dependency-search",
+
+        "zxh404.vscode-proto3",
+        "huang12zheng.protobuf-helper",
+        "gruntfuggly.todo-tree",
+        "shd101wyy.markdown-preview-enhanced"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/developer,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/developer"
+   }
