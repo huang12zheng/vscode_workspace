@@ -1,0 +1,12 @@
+{
+	"name": "hzgood/pub_activate",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"remoteUser": "root",
+    "settings": {
+		"terminal.integrated.shell.linux": null
+	},
+    "runArgs": ["--privileged"],
+    "workspaceFolder": "/workspace"
+}

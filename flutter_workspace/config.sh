@@ -1,0 +1,3 @@
+export DOCKER_TAG=v1
+export DOCKER_RES=hzgood/flutter_workspace
+export IMAGE_ID=cb0cda955ea9

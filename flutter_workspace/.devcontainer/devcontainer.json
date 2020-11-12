@@ -1,12 +1,12 @@
 {
-    "name": "flutter_docker",
-    "context": "..",
-    // "dockerFile": "../Dockerfile",
-    "dockerComposeFile": ["../docker-compose.yml"],
-    "remoteUser": "root",
+	"name": "hzgood/flutter_workspace",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"remoteUser": "root",
     "settings": {
-        "terminal.integrated.shell.linux": null
-    },
+		"terminal.integrated.shell.linux": null
+	},
     "runArgs": ["--privileged"],
     "extensions": [
         "dart-code.flutter",
@@ -22,6 +22,5 @@
         "gruntfuggly.todo-tree",
         "shd101wyy.markdown-preview-enhanced"
     ],
-    // "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/workspace,type=bind,consistency=delegated",
     "workspaceFolder": "/workspace"
-   }
+}
