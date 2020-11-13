@@ -1,0 +1,3 @@
+history 
+pwd
+echo "TEST FLUTTER COMMAND HISTORY SIS"

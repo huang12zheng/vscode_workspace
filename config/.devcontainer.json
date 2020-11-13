@@ -1,0 +1,17 @@
+{
+	"name": "Container for config",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "config",
+	"workspaceFolder": "/",
+	"shutdownAction":"none",
+
+	// "docker.host":"ssh://your-remote-user@your-remote-machine-fqdn-or-ip-here",
+
+	"runArgs": ["--privileged"],
+	"extensions": [
+		"gruntfuggly.todo-tree",
+	],
+	"remoteUser": "root"
+}

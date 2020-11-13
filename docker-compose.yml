@@ -1,22 +1,21 @@
 version: '3'
 
 services:
-  # config:
-  #   build:
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     - commandhistory:/commandhistory
-  #     - extensions:~/.vscode-server/extensions
+  config:
+    build: ./config
+    volumes:
+      - ./commandhistory:/commandhistory:delegated
+      - ./extensions:/root/.vscode-server/extensions:delegated
+    # command: /bin/sh -c "while sleep 10; do :; done"
 
   flutter:
-    image: cirrusci/flutter:stable
-    # volumes: 
-    #   - flutter:/workspace/flutter
+    build: ./flutter
+    volumes:
+      - ./commandhistory:/commandhistory:delegated
+      - ./extensions:/root/.vscode-server/extensions:delegated
+      - ./flutter:/workspace/flutter:delegated
+    # command: /bin/sh -c "while sleep 10; do :; done"
     
-    # links:
-    #   - config
-    restart: always
-volumes:
-    flutter: {}
-    extensions: {}
-    commandhistory: {}
+    links:
+      - config
+    # restart: always
