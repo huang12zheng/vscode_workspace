@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  # config:
+  #   build:
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - commandhistory:/commandhistory
+  #     - extensions:~/.vscode-server/extensions
+
+  flutter:
+    image: cirrusci/flutter:stable
+    # volumes: 
+    #   - flutter:/workspace/flutter
+    
+    # links:
+    #   - config
+    restart: always
+volumes:
+    flutter: {}
+    extensions: {}
+    commandhistory: {}
