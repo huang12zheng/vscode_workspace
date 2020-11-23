@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  vscode-plugin:
+    build: .
+    volumes:
+      - ./commandhistory:/commandhistory:delegated
+      - ./extensions:/home/node/.vscode-server/extensions:delegated
+    
