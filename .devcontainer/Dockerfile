@@ -10,7 +10,7 @@ RUN apk --update add git less openssh && \
 
 WORKDIR /workspaces
 
-RUN npm config set registry https://registry.npm.taobao.org
+# RUN npm config set registry https://registry.npm.taobao.org
 
 RUN npm install -g yo generator-code 
 
