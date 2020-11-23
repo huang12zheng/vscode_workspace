@@ -4,6 +4,5 @@ services:
   vscode-plugin:
     build: .
     volumes:
-      - ./commandhistory:/commandhistory:delegated
-      - ./extensions:/home/node/.vscode-server/extensions:delegated
-    
+      - ./workspace:/home/node:delegated
+      # - ./node_module:/usr/local/lib/node_modules:delegated
