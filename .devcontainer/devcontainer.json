@@ -3,21 +3,12 @@
 	"dockerComposeFile": [
 		"./docker-compose.yml"
 	],
-	"service": "vscode-plugin",
+	"service": "builder",
 
-	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/ash"
 	},
 
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"ms-vscode.vscode-typescript-tslint-plugin"
-	],
+	"extensions": [],
 	"workspaceFolder": "/workspaces",
-	// "mounts": [
-	// 	"source=extensions,target=/home/node/.vscode-server/extensions,type=volume",
-	// 	"source=commandhistory,target=/commandhistory,type=volume"
-	// ]
 }
