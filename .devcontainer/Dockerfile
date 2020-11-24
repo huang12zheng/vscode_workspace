@@ -13,6 +13,8 @@ WORKDIR /workspaces
 # RUN npm config set registry https://registry.npm.taobao.org
 
 RUN npm install -g yo generator-code 
+RUN npm install -g vsce
+
 
 # RUN chown node:node /workspaces
 RUN chown node:node /usr/local/lib/node_modules/
