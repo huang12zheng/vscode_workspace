@@ -5,10 +5,6 @@
 	],
 	"service": "builder",
 
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/ash"
-	},
-
 	"extensions": [],
 	"workspaceFolder": "/workspaces",
 }
