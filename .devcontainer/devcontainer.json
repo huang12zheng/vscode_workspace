@@ -6,5 +6,5 @@
 	"service": "builder",
 
 	"extensions": [],
-	"workspaceFolder": "/workspaces",
+	"workspaceFolder": "/home/node",
 }

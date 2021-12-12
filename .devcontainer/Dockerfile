@@ -1,10 +1,8 @@
-FROM alpine
+FROM node:alpine
 
-RUN apk --update add git less openssh && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm /var/cache/apk/*
+WORKDIR /home/node
 
-WORKDIR /workspaces
+RUN apk update && apk add bash
 
 ############# Common Setting #############################
 # UserName
@@ -18,7 +16,7 @@ ARG USERNAME=root
 #     && echo $SNIPPET >> "/home/$USERNAME/.bashrc"
 RUN mkdir -p /home/$USERNAME/.vscode-server/extensions \
     && chown -R $USERNAME \
-         /home/$USERNAME/.vscode-server
+    /home/$USERNAME/.vscode-server
 
 # RUN chown -R $USERNAME /workspaces
 # USER root

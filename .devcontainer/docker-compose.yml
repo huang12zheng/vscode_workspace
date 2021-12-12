@@ -4,4 +4,4 @@ services:
   builder:
     build: .
     volumes:
-      - ./workspace:/home/node:delegated
+      - ../workspace:/home/node:delegated
