@@ -1,0 +1,1 @@
+echo 'export PATH=$PATH:/home/node/script/'>>/home/node/.bashrc
