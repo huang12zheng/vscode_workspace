@@ -1,0 +1,37 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Task {
+  id      String   @id @default(uuid())
+  title   String
+  type    TaskType @default(Guidance)
+  content String?
+  //   managers  AccountDisc[] @relation("TaskManager")
+  //   executor  AccountDisc[] @relation("TaskExecutor")
+
+  relationBy Task[] @relation("RelationTask", references: [id])
+  relationTo Task[] @relation("RelationTask", references: [id])
+
+  PostId String
+  //   activity Post @relation(fields: [PostId], references: [id])
+}
+
+enum TaskType {
+  Complaints
+  Guidance
+  SubTask
+  Project
+}
+
+model Cooperation {
+  id       String   @id @default(uuid())
+  taskId   String
+  managers String[]
+  executor String[]
+  //   managers String[] @relation("TaskManager")
+  //   executor String[] @relation("TaskExecutor")
+
+  @@index([taskId])
+}

@@ -1,0 +1,5 @@
+FROM prisma_workspace
+
+COPY * /home/node/
+
+WORKDIR /home/node/

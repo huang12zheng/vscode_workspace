@@ -1,0 +1,33 @@
+model AccountAuth {
+  accountId String @id @default(uuid())
+  username  String @unique
+  mobile    String
+  email     String
+  idcard    String @unique
+
+  password   String
+  mobileCode String?
+  emailCode  String?
+  token      String
+}
+
+model AccessToken {
+  id         String        @id @default(uuid())
+  thirdToken String        @unique
+  accessType OAuthProvider
+
+  AccountId String
+  @@index([AccountId])
+}
+
+enum OAuthProvider {
+  google
+  github
+  reddit
+  wx
+  qq
+  taobao
+  mobile
+  password
+  bili
+}

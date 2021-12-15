@@ -1,0 +1,40 @@
+model Session {
+  id        String @id @default(uuid())
+  accountId String
+  addressId String
+  flavorId  String
+  deviceId  String
+
+  valid DateTime
+
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  @@index([accountId])
+  @@index([deviceId])
+}
+
+model SessionFlavor {
+  id          String @id @default(uuid())
+  osName      String
+  browserName String
+}
+
+model DeviceID {
+  id   String @id @default(uuid())
+  name String
+
+  mac         String
+  mobile      String?
+  ipv6        String
+  accessToken String?
+
+  SessionId String
+  // Session Session @relation(fields: [SessionId], references: [id])
+
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  @@index([mac])
+  @@index([ipv6])
+  @@index([mobile])
+}

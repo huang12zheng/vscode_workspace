@@ -1,0 +1,63 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContentEntity {
+  id      String   @id @default(uuid())
+  source  DiscType
+  title   String
+  content String
+
+  parentId  String? // comment
+  parent    ContentEntity?  @relation("TreeRelation", fields: [parentId], references: [id])
+  successor ContentEntity[] @relation("TreeRelation")
+}
+
+enum DiscType {
+  Forum
+  Blog
+  Comment
+}
+
+model DiscCommentJour {
+  id         String   @id @default(uuid())
+  contentId  String
+  accountId  String
+  minuteRead Int
+  rating     Int      @default(0)
+  favor      Boolean
+  disfavor   Boolean
+  share      String[]
+  Donate     Int[]
+  name       String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([accountId, contentId])
+}
+
+// model DiscComment {
+//   id        String   @id @default(uuid())
+//   contentId String
+//   rating    Int      @default(0)
+//   favor     Boolean
+//   disfavor  Boolean
+//   share     String[]
+//   Donate    Int[]
+//   name      String[]
+
+//   @@index([contentId])
+// }
+model DiscIndicator {
+  contentId     String @id @default(uuid())
+  minuteRead    Int?
+  viewCount     Int    @default(0)
+  commentCount  Int    @default(0)
+  favorCount    Int    @default(0)
+  disfavorCount Int    @default(0)
+  shareCount    Int    @default(0)
+  ratingCount   Int    @default(0)
+  rating        Int    @default(0)
+
+}

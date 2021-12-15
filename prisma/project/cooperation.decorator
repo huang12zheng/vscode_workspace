@@ -1,0 +1,9 @@
+replaces model Cooperation {
+  managers Account[] @relation("TaskManager")
+  executor Account[] @relation("TaskExecutor")
+}
+
+extends model Account {
+  asTaskManager  Cooperation[] @relation("TaskManager")
+  asTaskExecutor Cooperation[] @relation("TaskExecutor")
+}

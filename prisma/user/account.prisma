@@ -1,0 +1,15 @@
+model User {
+  id            String    @id @default(uuid())
+  mainAccountId String
+  Account       Account[]
+}
+
+// The unique identity of the subject.UIS
+model Account {
+  id Int @id @default(autoincrement())
+
+  accountName String
+  userId      String
+  user        User   @relation(fields: [userId], references: [id])
+  @@index([userId])
+}

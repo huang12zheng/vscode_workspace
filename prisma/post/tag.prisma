@@ -1,0 +1,23 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// DiscCommentJour
+// model TagPostJour {
+//   id        String   @id @default(uuid())
+//   postId    String
+//   accountId String
+//   name      String[]
+
+//   @@index([accountId])
+// }
+
+model TagPost {
+  id     String   @id @default(uuid())
+  postId String
+  name   String[]
+  prop   String[]
+
+  @@index([postId])
+}
